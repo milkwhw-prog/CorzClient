@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      { "type": "minecraft:model", "model": "corzclient:item/balisong_safe" },
+      { "type": "minecraft:model", "model": "corzclient:item/balisong_blade" },
+      { "type": "minecraft:model", "model": "corzclient:item/balisong_bite" }
+    ]
+  }
+}

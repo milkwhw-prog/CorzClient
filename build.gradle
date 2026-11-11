@@ -1,0 +1,72 @@
+plugins {
+	id 'fabric-loom' version '1.13.4'
+}
+
+repositories {
+}
+
+loom {
+	mixin {
+		useLegacyMixinAp = true
+		defaultRefmapName = 'corz-client-refmap.json'
+		add(sourceSets.main, 'corz-client-refmap.json')
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 21
+	options.encoding = 'UTF-8'
+	options.compilerArgs << '-Xmaxerrs' << '100000' << '-nowarn'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.named('jar') {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+configurations {
+	proguard
+}
+
+dependencies {
+	proguard 'com.guardsquare:proguard-base:7.9.1'
+}
+
+def obfuscatedJar = layout.buildDirectory.file(
+	"libs/${project.name}-${project.version}-obf.jar")
+def mappingTxt = layout.buildDirectory.file('proguard/mapping.txt')
+
+tasks.register('obfuscate', JavaExec) {
+	group = 'build'
+	description = 'Renames and repackages the remapped mod jar with ProGuard.'
+	dependsOn tasks.named('remapJar')
+	classpath = configurations.proguard
+	mainClass = 'proguard.ProGuard'
+	def remapped = tasks.named('remapJar').flatMap { it.archiveFile }
+	inputs.file(remapped)
+	inputs.file(file('proguard.pro'))
+	inputs.file(file('proguard-class-dict.txt'))
+	inputs.file(file('proguard-member-dict.txt'))
+	outputs.file(obfuscatedJar)
+	doFirst {
+		obfuscatedJar.get().asFile.parentFile.mkdirs()
+		mappingTxt.get().asFile.parentFile.mkdirs()
+		args = [
+			'-injars', remapped.get().asFile.absolutePath,
+			'-outjars', obfuscatedJar.get().asFile.absolutePath,
+			'-printmapping', mappingTxt.get().asFile.absolutePath,
+			'-include', file('proguard.pro').absolutePath
+		]
+	}
+}

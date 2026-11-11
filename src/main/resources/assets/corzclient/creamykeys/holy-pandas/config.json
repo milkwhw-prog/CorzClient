@@ -1,0 +1,16 @@
+{
+  "id": "custom-sound-pack-1720300926819",
+  "name": "pandas",
+  "key_define_type": "multi",
+  "sound": "GENERIC_R{0-4}.wav",
+  "soundup": "release/GENERIC.wav",
+  "defines": {
+    "14": "BACKSPACE.wav",
+    "14-up": "release/BACKSPACE.wav",
+    "28": "ENTER.wav",
+    "28-up": "release/ENTER.wav",
+    "57": "SPACE.wav",
+    "57-up": "release/SPACE.wav"
+  },
+  "version": 2
+}

@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type":       "ttf",
+      "file":       "corzclient:font.ttf",
+      "size":       16,
+      "shift":      [0, 0],
+      "oversample": 4.0
+    }
+  ]
+}

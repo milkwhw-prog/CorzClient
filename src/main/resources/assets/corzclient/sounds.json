@@ -1,0 +1,102 @@
+{
+  "pingsound": {
+    "sounds": [
+      "corzclient:pingsound"
+    ]
+  },
+  "introsound": {
+    "sounds": [
+      "corzclient:introsound"
+    ]
+  },
+  "access_granted": {
+    "sounds": [
+      "corzclient:access_granted"
+    ]
+  },
+  "buildfinished": {
+    "sounds": [
+      "corzclient:buildfinished"
+    ]
+  },
+  "cs_default_on":  { "sounds": ["corzclient:modules/module_on"] },
+  "cs_default_off": { "sounds": ["corzclient:modules/module_off"] },
+  "cs_pack1_on":    { "sounds": ["corzclient:modules/module_enable"] },
+  "cs_pack1_off":   { "sounds": ["corzclient:modules/module_disable"] },
+  "cs_pack2_on":    { "sounds": ["corzclient:modules/module_enable1"] },
+  "cs_pack2_off":   { "sounds": ["corzclient:modules/module_disable1"] },
+  "cs_pack3_on":    { "sounds": ["corzclient:modules/module_enable2"] },
+  "cs_pack3_off":   { "sounds": ["corzclient:modules/module_disable2"] },
+  "cs_th_on":       { "sounds": ["corzclient:modules/enable"] },
+  "cs_th_off":      { "sounds": ["corzclient:modules/disable"] },
+  "cs_pack4_on":    { "sounds": ["corzclient:modules/module_on1"] },
+  "cs_pack4_off":   { "sounds": ["corzclient:modules/module_off1"] },
+  "cs_hover_scroll": { "sounds": ["corzclient:modules/scroll"] },
+  "cs_category_click": { "sounds": ["corzclient:modules/category_click"] },
+  "cs_card_open": { "sounds": ["corzclient:modules/card_open"] },
+  "knife.deploy": { "sounds": [
+    { "name": "corzclient:knife/deploy1", "preload": true },
+    { "name": "corzclient:knife/deploy2", "preload": true },
+    { "name": "corzclient:knife/deploy3", "preload": true }
+  ] },
+  "knife.deploy_butterfly": { "sounds": [
+    { "name": "corzclient:knife/deploy_butterfly1", "preload": true },
+    { "name": "corzclient:knife/deploy_butterfly2", "preload": true },
+    { "name": "corzclient:knife/deploy_butterfly3", "preload": true }
+  ] },
+  "knife.swish": { "sounds": [
+    { "name": "corzclient:knife/swish1", "preload": true },
+    { "name": "corzclient:knife/swish2", "preload": true },
+    { "name": "corzclient:knife/swish3", "preload": true },
+    { "name": "corzclient:knife/swish4", "preload": true },
+    { "name": "corzclient:knife/swish5", "preload": true }
+  ] },
+  "knife.keys": { "sounds": [
+    { "name": "corzclient:knife/keys1", "preload": true },
+    { "name": "corzclient:knife/keys2", "preload": true },
+    { "name": "corzclient:knife/keys3", "preload": true },
+    { "name": "corzclient:knife/keys4", "preload": true },
+    { "name": "corzclient:knife/keys5", "preload": true },
+    { "name": "corzclient:knife/keys6", "preload": true },
+    { "name": "corzclient:knife/keys7", "preload": true },
+    { "name": "corzclient:knife/keys8", "preload": true },
+    { "name": "corzclient:knife/keys9", "preload": true },
+    { "name": "corzclient:knife/keys10", "preload": true },
+    { "name": "corzclient:knife/keys11", "preload": true },
+    { "name": "corzclient:knife/keys12", "preload": true }
+  ] },
+  "knife.tick": { "sounds": [
+    { "name": "corzclient:knife/tick1", "preload": true },
+    { "name": "corzclient:knife/tick2", "preload": true },
+    { "name": "corzclient:knife/tick3", "preload": true },
+    { "name": "corzclient:knife/tick4", "preload": true },
+    { "name": "corzclient:knife/tick5", "preload": true },
+    { "name": "corzclient:knife/tick6", "preload": true }
+  ] },
+  "knife.lock": { "sounds": [
+    { "name": "corzclient:knife/lock1", "preload": true },
+    { "name": "corzclient:knife/lock2", "preload": true },
+    { "name": "corzclient:knife/lock3", "preload": true },
+    { "name": "corzclient:knife/lock4", "preload": true }
+  ] },
+  "knife.keys_land": { "sounds": [
+    { "name": "corzclient:knife/keys_land1", "preload": true },
+    { "name": "corzclient:knife/keys_land2", "preload": true },
+    { "name": "corzclient:knife/keys_land3", "preload": true },
+    { "name": "corzclient:knife/keys_land4", "preload": true },
+    { "name": "corzclient:knife/keys_land5", "preload": true },
+    { "name": "corzclient:knife/keys_land6", "preload": true },
+    { "name": "corzclient:knife/keys_land7", "preload": true },
+    { "name": "corzclient:knife/keys_land8", "preload": true }
+  ] },
+  "knife.ring": { "sounds": [
+    { "name": "corzclient:knife/ring1", "preload": true },
+    { "name": "corzclient:knife/ring2", "preload": true },
+    { "name": "corzclient:knife/ring3", "preload": true },
+    { "name": "corzclient:knife/ring4", "preload": true },
+    { "name": "corzclient:knife/ring5", "preload": true },
+    { "name": "corzclient:knife/ring6", "preload": true }
+  ] },
+  "theme.halloween": { "sounds": [ { "name": "corzclient:theme/halloween", "stream": true } ] },
+  "theme.christmas": { "sounds": [ { "name": "corzclient:theme/christmas", "stream": true } ] }
+}

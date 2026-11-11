@@ -1,0 +1,38 @@
+{
+  "model": "c2visuals:melee/treasure_kn_geo",
+  "animation": "c2visuals:melee/treasure_kn",
+  "state_machine": "c2visuals:treasure_kn_state_machine",
+  "texture": "c2visuals:melee/treasure_kn_uv",
+  "slot_texture": "c2visuals:melee/slot/treasure_kn",
+  "sounds": {
+    "attack_left_hit": "c2visuals:entity.player.flash.hit",
+    "attack_right_hit": "c2visuals:entity.player.flash.hit",
+    "crit": "c2visuals:entity.player.flash.hit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+      "rotation": [180, 180, 0],
+      "translation": [0, -6.5, 1]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [180, 0, 0],
+      "translation": [0, -8.5, 1]
+    },
+    "ground": {
+      "rotation": [45, 0, 0],
+      "translation": [0, 6, 0]
+    },
+    "gui": {
+      "rotation": [0, 0, -45],
+      "translation": [4.5, 4, 0]
+    },
+    "head": {
+      "translation": [0, 4.75, 0]
+    },
+    "fixed": {
+      "translation": [0, 11, 0],
+      "rotation": [0, 90, 0],
+      "scale": [2, 2, 2]
+    }
+  }
+}

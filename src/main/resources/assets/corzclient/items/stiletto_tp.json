@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:composite",
+    "models": [
+      { "type": "minecraft:model", "model": "corzclient:item/stiletto_handle" },
+      { "type": "minecraft:model", "model": "corzclient:item/stiletto_blade" }
+    ]
+  }
+}

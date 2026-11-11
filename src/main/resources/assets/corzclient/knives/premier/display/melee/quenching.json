@@ -1,0 +1,36 @@
+{
+  "model": "c2visuals:melee/quenching_geo",
+  "animation": "c2visuals:melee/quenching",
+  "state_machine": "c2visuals:quenching_state_machine",
+  "texture": "c2visuals:melee/quenching_uv",
+  "slot_texture": "c2visuals:melee/slot/quenching",
+  "sounds": {
+    "attack_left_hit": "c2visuals:entity.player.flash.hit",
+    "attack_right_hit": "c2visuals:entity.player.flash.hit",
+    "crit": "c2visuals:entity.player.flash.hit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+      "translation": [0, 2.5, 1]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, 2.5, 1]
+    },
+    "ground": {
+      "rotation": [45, 0, 0],
+      "translation": [0, 6, 0]
+    },
+    "gui": {
+      "rotation": [0, 0, -45],
+      "translation": [4.5, 4, 0]
+    },
+    "head": {
+      "translation": [0, 4.75, 0]
+    },
+    "fixed": {
+      "translation": [0, 11, 0],
+      "rotation": [0, 90, 0],
+      "scale": [2, 2, 2]
+    }
+  }
+}

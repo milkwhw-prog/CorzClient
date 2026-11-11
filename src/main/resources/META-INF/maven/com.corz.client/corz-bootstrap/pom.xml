@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent><groupId>com.corz.client</groupId><artifactId>fabric-injector-parent</artifactId><version>1.0.0</version></parent>
+  <artifactId>corz-bootstrap</artifactId>
+  <dependencies>
+    <dependency><groupId>gg.corz</groupId><artifactId>corz-client</artifactId><version>1.0.0</version><scope>system</scope><systemPath>${corz.jar}</systemPath></dependency>
+    <dependency><groupId>gg.corz</groupId><artifactId>fabric-loader-memory</artifactId><version>${fabric.loader.version}</version><scope>system</scope><systemPath>${memory.loader.jar}</systemPath></dependency>
+  </dependencies>
+  <build>
+    <finalName>corz-bootstrap-${project.version}</finalName>
+    <plugins>
+      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><configuration><excludes><exclude>net/fabricmc/loader/impl/launch/knot/**</exclude></excludes></configuration></plugin>
+      <plugin><groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.5.0</version>
+        <executions><execution><id>prepare-corz-bootstrap</id><phase>process-classes</phase><goals><goal>exec</goal></goals>
+          <configuration><executable>${python.executable}</executable><arguments>
+            <argument>${maven.multiModuleProjectDirectory}/tools/package.py</argument><argument>bootstrap</argument><argument>--client</argument><argument>${corz.jar}</argument>
+          </arguments></configuration>
+        </execution></executions>
+      </plugin>
+      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version><configuration><forceCreation>true</forceCreation></configuration></plugin>
+    </plugins>
+  </build>
+</project>

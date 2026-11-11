@@ -1,0 +1,29 @@
+{
+  "model": "c2visuals:melee/karambit_geo",
+  "animation": "c2visuals:melee/karambit",
+  "state_machine": "c2visuals:default_melee_state_machine",
+  "texture": "c2visuals:melee/karambit_uv",
+  "slot_texture": "c2visuals:melee/slot/karambit",
+  "sounds": {
+    "crit": "minecraft:entity.player.attack.crit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+      "rotation": [-90, 0, 0],
+      "translation": [0, -2.5, 2]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [-90, 0, 0],
+      "translation": [0, -2.5, 2]
+    },
+    "ground": {
+      "rotation": [45, 0, 45],
+      "translation": [0, 6.25, 0]
+    },
+    "fixed": {
+      "rotation": [0, 0, 0],
+      "translation": [0, -6, 0],
+      "scale": [1.1, 1.1, 1.1]
+    }
+  }
+}

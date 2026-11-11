@@ -1,0 +1,95 @@
+{
+  // 模型位置
+  "model": "c2visuals:melee/baseball_bat_geo",
+  // 第一人称动画位置
+  "animation": "c2visuals:melee/baseball_bat",
+  // 第一人称状态机
+  "state_machine": "c2visuals:default_melee_state_machine",
+  // 模型材质
+  "texture": "c2visuals:melee/baseball_bat_uv",
+  // 物品栏材质
+  "slot_texture": "c2visuals:melee/slot/baseball_bat",
+  // 音效，在特定时机触发，为原版音效，需要在sounds.json注册
+  // sounds.json 写法可参见本包或者mcwiki
+  "sounds": {
+    // 造成暴击时播放，播放给除了攻击者外的所有人
+    "crit": "minecraft:entity.player.attack.crit"
+    // 暴击反馈，仅播放给攻击者，如果没配此项尝试回退到crit，没配crit只配了crit_feedback的话只有攻击者可以听到
+    // _feedback后缀对kill和两个hit同样有效
+//    "crit_feedback": "minecraft:entity.player.attack.crit",
+    // 击杀
+//    "kill": "minecraft:entity.player.attack.knockback",
+    // 左键命中
+//    "attack_left_hit": "minecraft:entity.player.attack.strong",
+    // 右键命中
+//    "attack_right_hit": "minecraft:entity.player.attack.strong",
+    // 左键挥舞
+//    "attack_left": "minecraft:entity.player.attack.weak",
+    // 右键挥舞
+//    "attack_right": "minecraft:entity.player.attack.strong",
+  },
+  // 各个视角下的调整，可参考C2Visuals docs工作台部分
+  "transforms": {
+    "thirdperson_righthand": {
+      "translation": [0, 2.5, 1]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, 2.5, 1]
+    },
+    "ground": {
+      "rotation": [45, 0, 0],
+      "translation": [0, 6, 0]
+    },
+    "gui": {
+      "rotation": [0, 0, -45],
+      "translation": [4.5, 4, 0]
+    },
+    "head": {
+      "translation": [0, 4.75, 0]
+    },
+    "fixed": {
+      "rotation": [0, 0, 45],
+      "translation": [5.5, -5.5, 0],
+      "scale": [0.8, 0.8, 0.8]
+    }
+  },
+  // 第三人称动画，需要安装pa；实现比较简单，因为本质不是专业的战斗模组）
+  "third_person_animation": {
+    // pa动画路径
+    "animation": "c2visuals:melee/baseball_bat",
+    // 上半身动画
+    "upper": {
+      // 待机时
+      "idle": "hold_upper",
+      // 右键攻击时（触发一次），填多个即在列表中循环；为了从简，和第一人称的攻击没有关联
+      "attack_right": ["melee_upper3"],
+      // 左键攻击时（触发一次）
+      "attack_left": ["melee_upper", "melee_upper2"],
+      // 行走时
+      "walk": "walk_upper",
+      // 跑步时
+      "run": "run_upper",
+      // 疾跑时
+      "sprint": "run_upper",
+      // 潜行不动时
+      "sneak": "hold_upper",
+      // 潜行
+      "sneak_walk": "hold_upper",
+      // 跳跃
+      "jump": "hold_upper",
+      // 掉落
+      "fall": "hold_upper"
+    },
+    // 下半身动画，同上，不过左右键不可用
+    "lower": {
+      "idle": "hold_lower",
+      "walk": "walk_lower",
+      "run": "run_lower",
+      "sprint": "run_lower",
+      "sneak": "crouch_lower",
+      "sneak_walk": "crouch_walk_lower",
+      "jump": "hold_lower",
+      "fall": "hold_lower"
+    }
+  }
+}

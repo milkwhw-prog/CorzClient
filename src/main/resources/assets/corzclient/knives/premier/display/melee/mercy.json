@@ -1,0 +1,25 @@
+{
+  "model": "c2visuals:melee/mercy_geo",
+  "animation": "c2visuals:melee/mercy",
+  "state_machine": "c2visuals:mercy_state_machine",
+  "texture": "c2visuals:melee/mercy_uv",
+  "slot_texture": "c2visuals:melee/slot/mercy",
+  "sounds": {
+    "attack_left_hit": "c2visuals:entity.player.flash.hit",
+    "attack_right_hit": "c2visuals:entity.player.flash.hit",
+    "crit": "c2visuals:entity.player.flash.hit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+      "rotation": [90, 0, 0]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [90, 0, 0]
+    },
+    "fixed": {
+      "rotation": [90, 0, 90],
+      "translation": [1, -1.25, 0],
+      "scale": [1.5, 1.5, 1.5]
+    }
+  }
+}

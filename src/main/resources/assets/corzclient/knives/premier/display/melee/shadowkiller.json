@@ -1,0 +1,38 @@
+{
+  "model": "c2visuals:melee/shadowkiller_geo",
+  "animation": "c2visuals:melee/shadowkiller",
+  "state_machine": "c2visuals:shadowkiller_state_machine",
+  "texture": "c2visuals:melee/shadowkiller_uv",
+  "slot_texture": "c2visuals:melee/slot/shadowkiller",
+  "sounds": {
+    "attack_left_hit": "c2visuals:entity.player.flash.hit",
+    "attack_right_hit": "c2visuals:entity.player.flash.hit",
+    "crit": "c2visuals:entity.player.flash.hit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+      "translation": [0, -3, -1],
+      "rotation": [-90, 0, 180]
+    },
+    "thirdperson_lefthand": {
+      "translation": [0, -3, -1],
+      "rotation": [-90, 0, 180]
+    },
+    "ground": {
+      "rotation": [45, 0, 0],
+      "translation": [0, 6, 0]
+    },
+    "gui": {
+      "rotation": [0, 0, -45],
+      "translation": [4.5, 4, 0]
+    },
+    "head": {
+      "translation": [0, 4.75, 0]
+    },
+    "fixed": {
+      "translation": [-1, 0, 0],
+      "rotation": [0, 90, 0],
+      "scale": [2, 2, 2]
+    }
+  }
+}

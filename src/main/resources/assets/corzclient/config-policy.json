@@ -1,0 +1,961 @@
+{
+  "version": 1,
+  "roles": {
+    "PORTABLE": "enabled and bindKey import normally",
+    "ACTOR": "enabled may only be imported as false; bindKey is never imported",
+    "RISKY": "enabled may only be imported as false; bindKey is never imported; reviewed settings still travel",
+    "GUARD": "enabled may only be imported as true; bindKey is never imported",
+    "PINNED": "enabled and bindKey are never imported"
+  },
+  "scopeOrder": [
+    "local",
+    "validate",
+    "portable",
+    "settingsDefault",
+    "typeDefaults"
+  ],
+  "typeDefaults": {
+    "local": [
+      "STRING",
+      "KEYBIND",
+      "ITEM_LIST",
+      "FRIEND_LIST",
+      "CONFIG_LIST",
+      "BUTTON",
+      "RADIO"
+    ],
+    "portable": [
+      "BOOLEAN",
+      "INTEGER",
+      "DOUBLE",
+      "ENUM",
+      "MODE",
+      "MINMAX",
+      "COLOR",
+      "PALETTE"
+    ]
+  },
+  "sections": {
+    "hud": [
+      "show_hud"
+    ],
+    "theme": [
+      "theme_customizer"
+    ]
+  },
+  "extraAllowed": [
+    "show_hud",
+    "sword_inspect"
+  ],
+  "aliases": {
+    "remove_client": "self_destruct",
+    "old_chunkfinder": "chunk_finder",
+    "custom_fov": "fov_slider",
+    "gamble_rigger": "gambling_rigger",
+    "rtp_meta": "rtp_base_alert",
+    "shader_fog": "custom_sky"
+  },
+  "removed": [
+    "milker",
+    "double_anchor",
+    "bow_aimbot",
+    "auto_crystal_v2",
+    "auto_totem_v2",
+    "anchor_macro_v2",
+    "safe_anchor_v2",
+    "perfect_mace_hit",
+    "auto_crystal",
+    "bridge_build",
+    "mace_swap",
+    "auto_refill_hotbar"
+  ],
+  "modules": {
+    "ac_alert": {
+      "role": "PORTABLE"
+    },
+    "aim_assist": {
+      "role": "PORTABLE",
+      "local": [
+        "Require Mouse Down"
+      ]
+    },
+    "anchor_hunter": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "portable": [
+        "Notifications",
+        "Status Card"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Sends /rtp, mines blocks and can log you out by itself."
+    },
+    "anchor_macro": {
+      "role": "PORTABLE"
+    },
+    "atmospheric_particles": {
+      "role": "PORTABLE"
+    },
+    "auto_aggro_pearl": {
+      "role": "RISKY",
+      "local": [
+        "Avoid Walls"
+      ],
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_area_miner": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Corner 1",
+        "Corner 2",
+        "Drill Name"
+      ],
+      "portable": [
+        "Show Area",
+        "Show Path"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Mines an area by itself."
+    },
+    "auto_auction_flipper": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Search Command",
+        "Sell Command",
+        "Price Keyword",
+        "AH Title Word",
+        "Confirm Yes Word",
+        "Confirm No Word",
+        "Confirm Title Word",
+        "Next Page Word",
+        "Already-Bought Word",
+        "Listed Word",
+        "List-Fail Word",
+        "Items to Flip",
+        "Auto-Pick Items",
+        "Mode",
+        "Min Profit / Item",
+        "Min Return %",
+        "Sales Tax %",
+        "Resell %",
+        "Max Unit Price",
+        "Max Total Spend",
+        "Reference %",
+        "Min Listings",
+        "Price Is Per",
+        "Max Flips / Sweep",
+        "Sell Confirm Slot",
+        "Search By"
+      ],
+      "portable": [
+        "Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Buys and lists on /ah with the user's money; raw command settings."
+    },
+    "auto_builder": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Auto-Buy Key",
+        "Mark Restock Bind",
+        "Buy Mode",
+        "Spending Limit Per Item",
+        "Spending Limit Per Buy",
+        "Max Price Per Item",
+        "Max Price Jump x",
+        "Prefer Stacks",
+        "Stack Price Tolerance %",
+        "Max Overbuy",
+        "Max Total Spend",
+        "Price Is Per",
+        "Buy Temp Dirt",
+        "AH Search By",
+        "AH Title Word",
+        "Price Keyword",
+        "Confirm Yes Word",
+        "Confirm No Word",
+        "Confirm Title Word",
+        "Next Page Word",
+        "Already-Bought Word",
+        "Team Code",
+        "Teammates",
+        "Logoff Message",
+        "Stop On Staff Nearby",
+        "Staff Detect Range",
+        "Logoff Delay",
+        "Mine Out Schematic",
+        "Rotation",
+        "Mirror",
+        "Restock When Empty",
+        "Restock Walk Distance",
+        "Restock Temp Dirt",
+        "Stockpile In Chests",
+        "Movement Test",
+        "AutoBuilder Test"
+      ],
+      "portable": [
+        "Show Preview",
+        "Textured Preview",
+        "Preview Mode",
+        "Preview Range",
+        "Ghost Fill",
+        "Render Correct",
+        "Render Missing",
+        "Render Incorrect",
+        "Show Build Box",
+        "Show Origin Marker",
+        "Preview Preset",
+        "Litematica Translucent Blocks",
+        "Outline Strength",
+        "Interior Clarity",
+        "Interior Fade Radius",
+        "Missing Through Walls",
+        "Missing Opacity",
+        "Wrong Block Opacity",
+        "Wrong State Opacity",
+        "Occluded Opacity",
+        "Outlines",
+        "Outline Width",
+        "Layer Mode",
+        "Rebuild Budget",
+        "Show Restock Containers",
+        "Show Restock Labels",
+        "Restock Render Distance",
+        "Restock Outline Alpha",
+        "Restock Label Scale",
+        "Show Team Overlay",
+        "Join Alerts",
+        "Alert Volume",
+        "Buy Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Buys from /ah, walks, places and breaks blocks, logs off."
+    },
+    "auto_cart": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_clicker": {
+      "role": "PORTABLE"
+    },
+    "auto_elytra_finder": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Firework Minimum Count",
+        "Auto Store Elytra"
+      ],
+      "portable": [
+        "Notifications",
+        "Status Card",
+        "Debug Rendering"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Flies the End and buys rockets and shulkers from /ah."
+    },
+    "auto_elytra_pilot": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Destination"
+      ],
+      "portable": [
+        "Status Card",
+        "Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Flies to your coordinates, buys rockets and XP bottles from /ah and logs off by itself."
+    },
+    "auto_hit_crystal": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_hotbar": {
+      "role": "PORTABLE",
+      "validate": [
+        "Refill Items"
+      ]
+    },
+    "auto_inventory_totem": {
+      "role": "PORTABLE"
+    },
+    "auto_jump_reset": {
+      "role": "PORTABLE"
+    },
+    "auto_mine": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "why": "Walks forward and breaks blocks by itself."
+    },
+    "auto_pot": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_promo": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Message"
+      ],
+      "why": "Sends /msg after kills."
+    },
+    "auto_sell": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Mode",
+        "Items"
+      ],
+      "portable": [
+        "Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Runs /sell and moves items into the sell menu."
+    },
+    "auto_sell_chest": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "why": "Opens the chest you look at, takes its items and runs /sell by itself."
+    },
+    "auto_shield_breaker": {
+      "role": "PORTABLE",
+      "local": [
+        "Require Attack Key",
+        "Require Weapon"
+      ]
+    },
+    "auto_spear": {
+      "role": "PORTABLE"
+    },
+    "auto_tool": {
+      "role": "PORTABLE"
+    },
+    "auto_totem": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_tpa_here": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Home Name",
+        "Skip Players",
+        "Ignore Friends"
+      ],
+      "why": "Sends /tpahere to players and /home by itself."
+    },
+    "auto_trap": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "auto_walk": {
+      "role": "PORTABLE"
+    },
+    "auto_xp": {
+      "role": "PORTABLE",
+      "portable": [
+        "Bind Mode",
+        "Throw Delay"
+      ]
+    },
+    "back_track": {
+      "role": "RISKY",
+      "portable": [
+        "Render Server Pos"
+      ],
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "blink": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "block_esp": {
+      "role": "PORTABLE",
+      "validate": [
+        "Blocks"
+      ]
+    },
+    "block_highlight": {
+      "role": "PORTABLE"
+    },
+    "block_overlay": {
+      "role": "PORTABLE"
+    },
+    "bloodhound": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Fly To Best",
+        "RTP Region"
+      ],
+      "portable": [
+        "Alerts",
+        "Show Pins",
+        "Show Tracers",
+        "Status Card"
+      ],
+      "portableReview": "Display and alert settings only; nothing that changes what it does when you run it.",
+      "why": "Hunt mode sends /rtp and flies by itself."
+    },
+    "boat_fly": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "bone_dropper": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Mode"
+      ],
+      "portable": [
+        "Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Drops bone pages and fills /order by itself."
+    },
+    "capes": {
+      "role": "PORTABLE"
+    },
+    "chunk_finder": {
+      "role": "PORTABLE",
+      "sinkReview": "Appends finds to a fixed local log file (chunkfinder_log.txt); no setting feeds the path."
+    },
+    "chunk_finder_v2": {
+      "role": "PORTABLE"
+    },
+    "client_sounds": {
+      "role": "PORTABLE"
+    },
+    "configs": {
+      "role": "PINNED",
+      "settingsDefault": "local",
+      "local": [
+        "Autosave",
+        "Configs"
+      ],
+      "why": "Autosave would upload the imported config to the user's account."
+    },
+    "corz_radio": {
+      "role": "PORTABLE",
+      "local": [
+        "Stations"
+      ],
+      "why": "Tuned station text is personal."
+    },
+    "creamy_keys": {
+      "role": "PORTABLE"
+    },
+    "criticals": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "crystal_aura": {
+      "role": "RISKY",
+      "local": [
+        "Anti Suicide",
+        "Stop On Loot"
+      ],
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "crystal_optimizer": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "crystal_pvp_bot": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "why": "Fights and moves by itself."
+    },
+    "custom_crosshair": {
+      "role": "PORTABLE"
+    },
+    "custom_flame": {
+      "role": "PORTABLE"
+    },
+    "custom_skin": {
+      "role": "PORTABLE"
+    },
+    "custom_sky": {
+      "role": "PORTABLE"
+    },
+    "custom_world": {
+      "role": "PORTABLE"
+    },
+    "deep_player_finder": {
+      "role": "PORTABLE"
+    },
+    "fake_coordinates": {
+      "role": "GUARD",
+      "settingsDefault": "local",
+      "why": "Privacy guard like name_protect: a config may turn it on, never off."
+    },
+    "fake_lag": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "fake_pay": {
+      "role": "PINNED",
+      "settingsDefault": "local",
+      "local": [
+        "Message"
+      ],
+      "why": "OFF turns a habitual fake /pay into a real payment; ON fakes real payments."
+    },
+    "fake_player": {
+      "role": "PORTABLE"
+    },
+    "fake_stats": {
+      "role": "PINNED",
+      "settingsDefault": "local",
+      "local": [
+        "Money",
+        "Shards",
+        "Kills",
+        "Deaths",
+        "Playtime"
+      ],
+      "why": "Deception display with personal values."
+    },
+    "fast_place": {
+      "role": "PORTABLE",
+      "local": [
+        "Anticheat Safe"
+      ]
+    },
+    "fastbreak": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "fire_fly": {
+      "role": "PORTABLE"
+    },
+    "flight": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "fov_slider": {
+      "role": "PORTABLE"
+    },
+    "freecam": {
+      "role": "PORTABLE",
+      "portable": [
+        "Body Uses Movement Keys"
+      ]
+    },
+    "freelook": {
+      "role": "PORTABLE"
+    },
+    "friends": {
+      "role": "PINNED",
+      "local": [
+        "Friends"
+      ],
+      "why": "OFF makes combat modules target friends."
+    },
+    "fullbright": {
+      "role": "PORTABLE"
+    },
+    "gambling_rigger": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "portable": [
+        "Chat Feedback"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Moves items out of gamble containers."
+    },
+    "gui_settings": {
+      "role": "PINNED",
+      "why": "A foreign ClickGUI key can lock the user out."
+    },
+    "hand_customer": {
+      "role": "PORTABLE"
+    },
+    "hand_shader": {
+      "role": "PORTABLE"
+    },
+    "heat_color": {
+      "role": "PORTABLE"
+    },
+    "hit_boxes": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "hit_select": {
+      "role": "PORTABLE"
+    },
+    "hit_swap": {
+      "role": "PORTABLE"
+    },
+    "hole_esp": {
+      "role": "PORTABLE"
+    },
+    "inventory_cleaner": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Blacklisted"
+      ],
+      "why": "Throws items on the ground by itself (SlotActionType.THROW); a shared config may only switch it off and never changes what it throws."
+    },
+    "jump_circles": {
+      "role": "PORTABLE"
+    },
+    "keep_sprint": {
+      "role": "PORTABLE"
+    },
+    "key_pearl": {
+      "role": "PORTABLE"
+    },
+    "knockback_delay": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "license": {
+      "role": "PINNED",
+      "why": "Infrastructure."
+    },
+    "loot_esp": {
+      "role": "PORTABLE",
+      "validate": [
+        "Valuable Items"
+      ]
+    },
+    "mace_bomber": {
+      "role": "PORTABLE"
+    },
+    "middle_click_friend": {
+      "role": "PORTABLE"
+    },
+    "mob_esp": {
+      "role": "PORTABLE"
+    },
+    "motion_blur": {
+      "role": "PORTABLE"
+    },
+    "name_protect": {
+      "role": "GUARD",
+      "local": [
+        "Alias",
+        "Hide Others",
+        "Hide Friends"
+      ],
+      "why": "A config may turn it on, never off."
+    },
+    "name_tags": {
+      "role": "PORTABLE"
+    },
+    "netherite_finder": {
+      "role": "PORTABLE"
+    },
+    "no_explosions": {
+      "role": "PORTABLE"
+    },
+    "no_farm_lag": {
+      "role": "PORTABLE"
+    },
+    "no_flame": {
+      "role": "PORTABLE"
+    },
+    "notifications": {
+      "role": "PORTABLE"
+    },
+    "obsidian_optimizer": {
+      "role": "PORTABLE"
+    },
+    "panic": {
+      "role": "PINNED",
+      "why": "The kill switch stays the user's."
+    },
+    "particles": {
+      "role": "PORTABLE"
+    },
+    "pearl_catch": {
+      "role": "PORTABLE"
+    },
+    "pearl_catch_assist": {
+      "role": "PORTABLE"
+    },
+    "pearl_prediction": {
+      "role": "PORTABLE",
+      "portable": [
+        "Throw Preview"
+      ]
+    },
+    "perfect_wind_charge": {
+      "role": "PORTABLE"
+    },
+    "player_esp": {
+      "role": "PORTABLE"
+    },
+    "potion_refill": {
+      "role": "PORTABLE"
+    },
+    "reach": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "realistic_water": {
+      "role": "PORTABLE"
+    },
+    "region_map": {
+      "role": "PORTABLE"
+    },
+    "relog": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "why": "Disconnects you and joins the server again by itself."
+    },
+    "rtp_base_alert": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "TPAHere Names",
+        "TPAHere",
+        "Anti Death",
+        "Health",
+        "Stop On Player"
+      ],
+      "why": "Sends /rtp and /tpahere and disconnects by itself."
+    },
+    "safe_anchor": {
+      "role": "PORTABLE",
+      "local": [
+        "Loot Safety"
+      ],
+      "validate": [
+        "Trigger Key"
+      ]
+    },
+    "scaffold": {
+      "role": "RISKY",
+      "local": [
+        "Require Sneak"
+      ],
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "seed_analyzer": {
+      "role": "PORTABLE"
+    },
+    "self_destruct": {
+      "role": "PINNED",
+      "settingsDefault": "local",
+      "local": [
+        "Scrub Log Traces",
+        "Delete Jar On Exit"
+      ],
+      "why": "A keybind wipes the client and deletes the jar."
+    },
+    "show_hud": {
+      "role": "PORTABLE",
+      "portable": [
+        "Server Info",
+        "Keybinds Card"
+      ]
+    },
+    "silent_aim": {
+      "role": "PORTABLE"
+    },
+    "silent_home": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Home Name"
+      ],
+      "why": "Sends /sethome, /delhome, /rtp and /home by itself."
+    },
+    "skin_protect": {
+      "role": "GUARD",
+      "why": "A config may turn it on, never off."
+    },
+    "spawner_finder": {
+      "role": "PORTABLE",
+      "portable": [
+        "Scan Budget"
+      ]
+    },
+    "spawner_protect": {
+      "role": "PINNED",
+      "settingsDefault": "local",
+      "local": [
+        "Detect Range",
+        "Ignore Friends",
+        "Max Mine Time",
+        "Logoff Message"
+      ],
+      "why": "OFF removes AFK protection; ON panic-mines spawners and logs off."
+    },
+    "special_item_buyer": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Drill",
+        "Sell Wand",
+        "Shard Axe",
+        "Shard Shovel",
+        "Mode",
+        "Max Price",
+        "Min Time Left",
+        "Max AH Pages",
+        "Click Spacing",
+        "Max Total Spend",
+        "Drill Search",
+        "Sell Wand Search",
+        "Shard Axe Search",
+        "Shard Shovel Search",
+        "AH Title Word",
+        "Price Keyword",
+        "Self Destruct Word",
+        "Next Page Word",
+        "Confirm Yes Word",
+        "Confirm Title Word",
+        "Dialog Title Word",
+        "Already-Bought Word",
+        "No Money Word"
+      ],
+      "portable": [
+        "Notifications"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Buys shard tools on /ah with the user's money; raw command settings."
+    },
+    "speed_hack": {
+      "role": "RISKY",
+      "why": "Ban-risk module (ModuleMeta.BLATANT): turning it on is the user's own decision, never a shared config's."
+    },
+    "spotify_hud": {
+      "role": "PORTABLE",
+      "sinkReview": "Fixed hosts (itunes.apple.com, lrclib.net) and a built-in now-playing reader; no setting feeds a URL, host or command."
+    },
+    "sprint": {
+      "role": "PORTABLE"
+    },
+    "staff_list": {
+      "role": "PORTABLE"
+    },
+    "storage_esp": {
+      "role": "PORTABLE"
+    },
+    "sus_chunk_finder": {
+      "role": "PORTABLE",
+      "local": [
+        "Seed"
+      ],
+      "why": "The server seed is private."
+    },
+    "sus_chunk_finder_v2": {
+      "role": "PORTABLE"
+    },
+    "sword_inspect": {
+      "role": "PORTABLE",
+      "validate": [
+        "Inspect Key"
+      ]
+    },
+    "sword_pvp_bot": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "why": "Fights and moves by itself."
+    },
+    "target_esp": {
+      "role": "PORTABLE"
+    },
+    "theme_customizer": {
+      "role": "PINNED",
+      "why": "Infrastructure; its settings travel in content.theme.",
+      "local": [
+        "Theme Season",
+        "Season Toast Year",
+        "Christmas Gifts"
+      ]
+    },
+    "time_changer": {
+      "role": "PORTABLE"
+    },
+    "totem_counter": {
+      "role": "PORTABLE"
+    },
+    "trails": {
+      "role": "PORTABLE"
+    },
+    "trident_assist": {
+      "role": "PORTABLE"
+    },
+    "trigger_bot": {
+      "role": "RISKY",
+      "local": [
+        "Require Mouse Down"
+      ],
+      "why": "Attacks whatever is under the crosshair by itself; a shared config may only switch it off."
+    },
+    "villager_trade_bot": {
+      "role": "ACTOR",
+      "settingsDefault": "local",
+      "local": [
+        "Automation Mode",
+        "Profession",
+        "Action",
+        "Output",
+        "Enchantment",
+        "Enchant Level",
+        "Item",
+        "Max Emerald Cost",
+        "Target Amount",
+        "Priority",
+        "Auto Drop Output",
+        "Auto Acquire Emeralds",
+        "Emerald Source",
+        "Sell Item",
+        "Emerald Reserve",
+        "Auto Withdraw Materials",
+        "Auto Deposit Outputs",
+        "Storage Role",
+        "Add Looked-At Trade",
+        "Mark Storage",
+        "Clear Added Targets/Storage"
+      ],
+      "portable": [
+        "Debug Logging",
+        "Status Overlay",
+        "Villager ESP"
+      ],
+      "portableReview": "Display and notification settings only; nothing that changes what the bot does when you run it.",
+      "why": "Walks, trades, deposits and drops outputs by itself."
+    },
+    "w_tap": {
+      "role": "PORTABLE"
+    },
+    "wandering_trader_finder": {
+      "role": "PORTABLE",
+      "portable": [
+        "Auto Waypoint"
+      ],
+      "sinkReview": "Appends detections to a fixed local log file (traderfinder_log.txt); no setting feeds the path."
+    },
+    "waypoints": {
+      "role": "PORTABLE",
+      "local": [
+        "Name"
+      ],
+      "validate": [
+        "Set Waypoint Key"
+      ],
+      "why": "Waypoint names are personal text."
+    },
+    "weather_changer": {
+      "role": "PORTABLE"
+    },
+    "weather_notifier": {
+      "role": "PORTABLE"
+    },
+    "zoom": {
+      "role": "PORTABLE",
+      "portable": [
+        "Bind Mode"
+      ]
+    }
+  },
+  "keybinds": "Imported keys and bindKeys must be keyboard keys; mouse buttons (1000-1007) are never imported"
+}

@@ -1,0 +1,29 @@
+{
+  "model": "c2visuals:melee/thieve_sea_geo",
+  "animation": "c2visuals:melee/thieve_sea",
+  "state_machine": "c2visuals:thieve_sea_state_machine",
+  "texture": "c2visuals:melee/thieve_sea_uv",
+  "slot_texture": "c2visuals:melee/slot/thieve_sea",
+  "sounds": {
+    "attack_left_hit": "c2visuals:entity.player.flash.hit",
+    "attack_right_hit": "c2visuals:entity.player.flash.hit",
+    "crit": "c2visuals:entity.player.flash.hit"
+  },
+  "transforms": {
+    "thirdperson_righthand": {
+		"rotation": [90, 0, 0],
+		"translation": [0, 0, 9]
+	},
+	"thirdperson_lefthand": {
+		"rotation": [90, 0, 0],
+		"translation": [0, 0, 8.75]
+	},
+	"ground": {
+		"translation": [0, 5.25, 0]
+	},
+	"fixed": {
+		"rotation": [90, 0, 90],
+		"translation": [-7.5, 0, 0]
+	}
+  }
+}
